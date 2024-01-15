@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "author": "Harvan Nurluthfi",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 121.8, "left": -170, "attrs": {} },
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 18.06,
+      "left": -12.7,
+      "rotate": 270,
+      "attrs": {}
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": -40.4, "left": 172.8, "attrs": {} },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -104.1,
+      "left": -205.7,
+      "attrs": { "distance": "29" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -51.6,
+      "left": 167,
+      "attrs": { "color": "red", "flip": "" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "servo1:GND", "bb1:tn.5", "#8f4814", [ "h0" ] ],
+    [ "servo1:V+", "bb1:tp.5", "red", [ "h-259.2", "v115" ] ],
+    [ "servo1:PWM", "bb1:24t.b", "orange", [ "h-19.2", "v153.8" ] ],
+    [ "ultrasonic1:GND", "bb1:tn.4", "black", [ "v0" ] ],
+    [ "ultrasonic1:ECHO", "bb1:23t.c", "limegreen", [ "v0" ] ],
+    [ "ultrasonic1:TRIG", "bb1:22t.d", "violet", [ "v0" ] ],
+    [ "bb1:30t.b", "bb1:tp.7", "red", [ "v48", "h-182.4", "v-96.3" ] ],
+    [ "bb1:25t.b", "bb1:tn.7", "black", [ "v38.4", "h-144", "v-76.7" ] ],
+    [ "led1:C", "bb1:tn.6", "black", [ "h-258.8", "v153.7" ] ],
+    [ "bb1:21t.e", "led1:A", "red", [ "h144", "v-220.8" ] ],
+    [ "esp:12", "bb1:24t.a", "", [ "$bb" ] ],
+    [ "esp:13", "bb1:26t.a", "", [ "$bb" ] ],
+    [ "esp:14", "bb1:23t.a", "", [ "$bb" ] ],
+    [ "esp:25", "bb1:20t.a", "", [ "$bb" ] ],
+    [ "esp:26", "bb1:21t.a", "", [ "$bb" ] ],
+    [ "esp:27", "bb1:22t.a", "", [ "$bb" ] ],
+    [ "esp:32", "bb1:18t.a", "", [ "$bb" ] ],
+    [ "esp:33", "bb1:19t.a", "", [ "$bb" ] ],
+    [ "esp:34", "bb1:16t.a", "", [ "$bb" ] ],
+    [ "esp:35", "bb1:17t.a", "", [ "$bb" ] ],
+    [ "esp:3V3", "bb1:12t.a", "", [ "$bb" ] ],
+    [ "esp:EN", "bb1:13t.a", "", [ "$bb" ] ],
+    [ "esp:VP", "bb1:14t.a", "", [ "$bb" ] ],
+    [ "esp:VN", "bb1:15t.a", "", [ "$bb" ] ],
+    [ "esp:GND.1", "bb1:25t.a", "", [ "$bb" ] ],
+    [ "esp:D2", "bb1:27t.a", "", [ "$bb" ] ],
+    [ "esp:D3", "bb1:28t.a", "", [ "$bb" ] ],
+    [ "esp:CMD", "bb1:29t.a", "", [ "$bb" ] ],
+    [ "esp:5V", "bb1:30t.a", "", [ "$bb" ] ],
+    [ "ultrasonic1:VCC", "bb1:tp.1", "red", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
