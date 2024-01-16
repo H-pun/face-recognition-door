@@ -18,7 +18,7 @@
       "id": "ultrasonic1",
       "top": -104.1,
       "left": -205.7,
-      "attrs": { "distance": "29" }
+      "attrs": { "distance": "100" }
     },
     {
       "type": "wokwi-led",
